@@ -1,0 +1,1016 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #172554,
+        #030712 40%,
+        #000000
+    );
+
+    font-family:'Poppins',sans-serif;
+}
+
+#stars{
+
+    position:fixed;
+    inset:0;
+    z-index:0;
+}
+
+.hero{
+
+    position:relative;
+
+    z-index:2;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+}
+
+.moon-wrap{
+
+    position:relative;
+
+    width:420px;
+    height:420px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.moon{
+
+    width:280px;
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    z-index:3;
+
+    position:relative;
+
+    animation:moonFloat 7s ease-in-out infinite;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.7),
+    0 0 80px rgba(255,220,170,.6),
+    0 0 150px rgba(255,200,120,.5);
+}
+
+.moon-glow{
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,220,170,.35),
+        rgba(255,180,100,.15),
+        transparent 70%
+    );
+
+    filter:blur(40px);
+
+    animation:glowPulse 5s ease-in-out infinite;
+}
+
+.moon-ring{
+
+    position:absolute;
+
+    width:340px;
+    height:340px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    animation:rotateRing 25s linear infinite;
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5.5rem;
+
+    color:#ffb6d9;
+
+    text-shadow:
+    0 0 10px #ffb6d9,
+    0 0 25px #ff8fc5,
+    0 0 50px #ff8fc5;
+
+    margin-bottom:15px;
+}
+
+.line{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    margin:8px;
+
+    opacity:.95;
+}
+
+button{
+
+    margin-top:30px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff5aa5,
+        #ff8fc5
+    );
+
+    box-shadow:
+    0 0 15px rgba(255,90,165,.6);
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}
+
+#flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.95),
+        rgba(255,230,180,0.7),
+        rgba(255,180,100,0.3),
+        transparent
+    );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:100;
+}
+.shooting-star{
+
+    position:fixed;
+
+    width:180px;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        white,
+        transparent
+    );
+
+    transform:rotate(-25deg);
+
+    z-index:1;
+
+    animation:shooting 3s linear forwards;
+}
+
+@keyframes shooting{
+
+    from{
+        left:-200px;
+        opacity:1;
+    }
+
+    to{
+        left:120%;
+        opacity:0;
+    }
+}
+
+@keyframes moonFloat{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes glowPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+@keyframes rotateRing{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media(max-width:768px){
+
+    .moon{
+        width:180px;
+        height:180px;
+    }
+
+    .moon-wrap{
+        width:300px;
+        height:300px;
+    }
+
+    h1{
+        font-size:3.5rem;
+    }
+
+    .line{
+        font-size:1rem;
+    }
+}
+.next-section{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:100px 20px;
+}
+
+.next-section h2{
+
+    font-size:3rem;
+
+    color:#ffb6d9;
+
+    margin-bottom:20px;
+}
+
+.next-section p{
+
+    font-size:1.3rem;
+
+    opacity:.9;
+}
+.galaxy-title{
+
+    font-family:'Parisienne', cursive;
+
+    font-size:5rem;
+
+    color:#ffb6d9;
+
+    text-align:center;
+
+    margin-bottom:90px;
+
+    text-shadow:
+        0 0 10px #ffb6d9,
+        0 0 25px #ff8fc5,
+        0 0 50px #ff8fc5;
+
+    animation:titleGlow 4s ease-in-out infinite;
+}
+
+.planet-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-bottom:60px;
+}
+
+.planet{
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #ff8fc5,
+        #7c3aed
+    );
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 20px rgba(255,143,197,.5);
+
+    animation:floatPlanet 5s ease-in-out infinite;
+}
+
+.planet:hover{
+
+    transform:scale(1.1);
+}
+
+.planet span{
+
+    margin-top:10px;
+
+    font-size:.9rem;
+}
+
+@keyframes floatPlanet{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#memoryBox{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    min-height:180px;
+}
+
+#memoryTitle{
+
+    color:#ffb6d9;
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+}
+
+#memoryText{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+}
+.love-section{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+    color:white;
+}
+
+.love-title{
+
+    font-family:'Parisienne', cursive;
+
+    font-size:3rem;
+
+    font-weight:normal;
+
+    color:#ffd6ea;
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 8px rgba(255,182,217,.8),
+        0 0 18px rgba(255,143,197,.5);
+
+    animation:loveGlow 4s ease-in-out infinite;
+}
+
+@keyframes loveGlow{
+
+    0%,100%{
+
+        text-shadow:
+            0 0 8px rgba(255,182,217,.8),
+            0 0 18px rgba(255,143,197,.5);
+    }
+
+    50%{
+
+        text-shadow:
+            0 0 15px rgba(255,182,217,1),
+            0 0 30px rgba(255,143,197,.8);
+    }
+}
+
+.lantern-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:50px;
+
+    margin-bottom:70px;
+}
+
+.lantern{
+
+    font-size:5rem;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    animation:lanternFloat 4s ease-in-out infinite;
+}
+
+.lantern:hover{
+
+    transform:scale(1.2);
+}
+
+@keyframes lanternFloat{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+#reasonBox{
+
+    max-width:700px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+    min-height:180px;
+}
+
+#reasonTitle{
+
+    color:#ffb6d9;
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+}
+
+#reasonText{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+}
+.nextBtn{
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff5aa5,
+        #ff8fc5
+    );
+
+    box-shadow:
+    0 0 15px rgba(255,90,165,.6);
+
+    transition:.3s;
+}
+
+.nextBtn:hover{
+
+    transform:scale(1.08);
+}
+.next-section{
+    display:none;
+}
+
+.love-section{
+    display:none;
+}
+
+.letter-section{
+    display:none;
+}
+
+.photo-section{
+    display:none;
+}
+.nextBtn{
+    position:relative;
+    z-index:9999;
+}
+.letter-section{
+
+    min-height:100vh;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:100px 20px;
+}
+
+.letter-title{
+
+    font-family:'Parisienne',cursive;
+
+    font-size:4rem;
+
+    color:#ffd6ea;
+
+    margin-bottom:60px;
+
+    text-shadow:
+        0 0 10px #ffb6d9,
+        0 0 25px #ff8fc5;
+}
+
+.envelope{
+
+    width:320px;
+
+    height:220px;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+.envelope-front{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ff8fc5;
+
+    border-radius:10px;
+}
+
+.envelope-flap{
+
+    position:absolute;
+
+    width:100%;
+
+    height:110px;
+
+    background:#ffb6d9;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:top;
+
+    transition:1s;
+}
+
+.envelope.open .envelope-flap{
+
+    transform:rotateX(180deg);
+}
+
+.envelope-text{
+
+    margin-top:40px;
+
+    font-size:1.2rem;
+}
+.letter-paper{
+
+    width:80%;
+
+    max-width:900px;
+
+    background:white;
+
+    color:#333;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    margin-top:50px;
+
+    opacity:0;
+
+    transform:translateY(250px);
+
+    transition:1.5s;
+
+    display:none;
+}
+
+.letter-paper.show{
+
+    display:block;
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.letter-paper h2{
+
+    text-align:center;
+
+    color:#ff5aa5;
+
+    margin-bottom:30px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+}
+
+.letter-content{
+    text-align:left;
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+}
+
+.letter-content p{
+    margin-bottom:25px;
+}
+
+.greeting{
+    font-size:1.4rem;
+    font-weight:600;
+}
+
+.center-lines{
+    text-align:center;
+    font-style:italic;
+}
+
+.signature{
+    text-align:right;
+    margin-top:40px;
+    font-family:'Great Vibes', cursive;
+    font-size:1.8rem;
+}
+.letter-content .nextBtn{
+
+    display:block;
+
+    margin:50px auto 0 auto;
+
+}
+/* =========================
+   PHOTO SECTION
+========================= */
+
+.photo-section{
+
+    min-height:100vh;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:120px 30px;
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+}
+
+.photo-title{
+
+    font-family:'Parisienne', cursive;
+
+    font-size:4rem;
+
+    margin-bottom:60px;
+
+    color:#ffd6ea;
+
+    text-align:center;
+}
+
+.gallery{
+
+    width:100%;
+
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.photo-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:15px;
+
+    transition:.4s;
+}
+
+.photo-card:hover{
+
+    transform:translateY(-10px);
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    display:block;
+}
+
+.photo-card p{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    line-height:1.7;
+}
+
+/* Hide sections initially */
+
+.next-section{
+    display:none;
+}
+
+.love-section{
+    display:none;
+}
+
+.letter-section{
+    display:none;
+}
+
+.photo-section{
+    display:none;
+}
+/* =========================
+   FINAL SCENE
+========================= */
+
+.final-section{
+
+    min-height:100vh;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.birthday-card{
+
+    max-width:900px;
+
+    text-align:center;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+}
+
+.final-title{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:5rem;
+
+    color:#ffd6ea;
+
+    margin-bottom:40px;
+
+    text-shadow:
+    0 0 15px #ffb6d9,
+    0 0 35px #ff8fc5;
+}
+
+.final-message{
+
+    font-size:1.3rem;
+
+    line-height:2;
+
+    margin-bottom:25px;
+}
+
+.final-sign{
+
+    margin-top:40px;
+
+    color:#ffb6d9;
+
+    font-family:'Parisienne', cursive;
+
+    font-size:3rem;
+}
+.moon{
+
+    width:280px;
+    height:280px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.moon:hover{
+
+    transform:scale(1.05);
+
+    filter:brightness(1.1);
+}
+
+.moon-text{
+
+    margin-top:20px;
+
+    color:#ffd6ea;
+
+    font-size:1.2rem;
+
+    letter-spacing:2px;
+
+    animation:moonHint 2s infinite;
+}
+
+@keyframes moonHint{
+
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
