@@ -992,32 +992,48 @@ button:hover{
 }
 
 .moon-text{
+.moon-text{
 
-    margin-top:20px;
+    margin-top:25px;
 
-    color:#ffffff;
+    color:#fff;
 
-    font-size:1.3rem;
+    font-size:1.4rem;
+
+    font-weight:600;
 
     letter-spacing:2px;
 
-    font-weight:500;
-
     text-shadow:
-        0 0 10px rgba(255,255,255,.8),
-        0 0 20px rgba(255,182,217,.8),
-        0 0 35px rgba(255,143,197,.8);
+        0 0 10px #ffffff,
+        0 0 20px #ffffff,
+        0 0 40px #ffb6d9,
+        0 0 60px #ff8fc5,
+        0 0 90px #ff5aa5;
 
-    animation:moonHint 2s infinite;
+    animation:moonGlow 2s ease-in-out infinite;
+}
 }
 
-@keyframes moonHint{
+@keyframes moonGlow{
 
     0%,100%{
-        opacity:.85;
+
+        text-shadow:
+            0 0 10px #ffffff,
+            0 0 20px #ffffff,
+            0 0 40px #ffb6d9,
+            0 0 60px #ff8fc5,
+            0 0 90px #ff5aa5;
     }
 
     50%{
-        opacity:1;
+
+        text-shadow:
+            0 0 20px #ffffff,
+            0 0 40px #ffffff,
+            0 0 70px #ffb6d9,
+            0 0 100px #ff8fc5,
+            0 0 140px #ff5aa5;
     }
 }
